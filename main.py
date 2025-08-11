@@ -9,9 +9,16 @@ from typing import List
 app = FastAPI()
 
 # CORS setup
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # ya ["http://localhost:3000"] agar specific chahiye
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
