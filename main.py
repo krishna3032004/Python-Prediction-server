@@ -102,7 +102,7 @@ def predict_price(history: History):
                 price = lowest_price
             else:
                 price = round_to_known_prices(row["yhat"])
-            result.append({"ds": date_str, "yhat": price})
+            result.append({"ds": date_str, "yhat": price, "yhat_lower": float(row["yhat_lower"]),"yhat_upper": float(row["yhat_upper"])})
 
         print(result)    
         return result
